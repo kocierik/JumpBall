@@ -1,0 +1,58 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: black;
+    font-family: "Coming Soon";
+    color: white;
+    animation: loopColor 5s infinite;
+}
+
+@keyframes loopColor {
+    0% {
+        background-color: black;
+    }
+
+    25% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+.container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    align-items: flex-end;
+    font-size: 30px;
+}
+.container__text{
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.text{
+    font-size: 20px;
+}
