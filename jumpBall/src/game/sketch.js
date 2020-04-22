@@ -16,7 +16,10 @@ function touchCanvas(){
     let canvas = createCanvas(innerWidth, innerHeight);
     stroke(255); // Set line drawing color to white
     canvas.touchStarted(() => {ball.jump()})
-    canvas.mouseClicked(() => {ball.jump()})
+    document.body.onmousedown = function() {
+        ball.jump()
+    }
+
 }
 
 function createJumpingBall() {
