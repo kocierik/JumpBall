@@ -41,28 +41,29 @@ body{
 }
 .container-value{
     display: flex;
-    flex: 0 1 auto;
-    height: 100px;
+    flex: 1 0 20%;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
 .divCanvas{
     display: flex;
-    flex: 1 0 auto;
+    flex: 0 1 30%;
 }
-
 .pause{
     display: flex;
-    flex: 0 0 auto;
-    height: 100px;
+
+    flex: 1 0 20%;
     justify-content: center;
     align-items: center;
     font-size: 60px;
     cursor: pointer;
 
 }
-
+canvas{
+    height: 100%;
+    width: 100%;
+}
 
 .points{
     display: flex;

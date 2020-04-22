@@ -5,21 +5,18 @@ let ball, enemy;
 let points = 0;
 let divPoints, divGame, divValue, divRecord, divPause, divCanvas;
 let record;
+let game = true;
 function createBoardGame(){
     touchCanvas()
-    createHtml();
+
     savePoints()
-    windowResized()
+
 }
 
 function touchCanvas(){
-    let canvas = createCanvas(innerWidth, innerHeight);
+    let canvas = createCanvas(innerWidth, outerHeight/2);
     stroke(255); // Set line drawing color to white
-    canvas.touchStarted(() => {ball.jump()})
-    document.body.onmousedown = function() {
-        ball.jump()
-    }
-
+    canvas.mouseClicked(() => {ball.jump()})
 }
 
 function createJumpingBall() {
@@ -45,10 +42,12 @@ function createHtml(){
     divGame.child(divCanvas);
     divCanvas.child(canvas);
     divGame.child(divPause);
+    console.log(divGame.clientHeight);
 }
 
 function setup() {
     createBoardGame()
+    createHtml();
     createJumpingBall()
     createEnemy()
 }
@@ -93,10 +92,9 @@ function changeColor(){
     }
 
 }
-function windowResized() {
-    window.resizeCanvas(window.windowWidth, window.windowHeight/1.5);
-}
+
 function drawGame(){
+
     changeColor()
     ball.draw();
     enemy.draw();
@@ -124,6 +122,10 @@ function checkLose(){
         window.storeItem('record',points);
         points = 0;
         window.storeItem('pointsPause',points);
+        divPause.html('retry');
+        game = false;
+        createJumpingBall()
+        createEnemy()
     }
 }
 function checkRecord(){
@@ -150,8 +152,18 @@ function pointGame(){
     divPoints.innerHTML = divPoints.html('score: ' + points, false);
 }
 function pause(){
-    divPause.touchStarted(() => {window.location = 'startMenu.html';})
-    divPause.mouseClicked(() => {window.location = 'startMenu.html';})
+    divPause.mouseClicked(() => {
+        if(game === true){
+            divPause.html('resume');
+            window.noLoop();
+            game = false;
+        }
+        else{
+            divPause.html('pause');
+            window.loop();
+            game = true;
+        }
+    })
     window.storeItem('pointsPause',points);
 }
 
