@@ -1,25 +1,23 @@
 const MAX_JUMPY = 100;
 const BASE_LINE = 312;
 const RADIUS = 20
-const CHANGECOLORTIME = 250;
 let ball, enemy;
 let points = 0;
-let bg;
-let divPoints, divGame, divValue, divRecord;
+let divPoints, divGame, divValue, divRecord, divPause, divCanvas;
 let record;
 function createBoardGame(){
-    const canvas = createCanvas(innerWidth, innerHeight/1.5).addClass('game');
-    stroke(255); // Set line drawing color to white
-    canvas.touchStarted(() => {ball.jump()})
+    touchCanvas()
     createHtml();
-    const x = (window.windowWidth - width) / 2;
-    const y = (window.windowHeight - height) / 2;
-    canvas.position(x, y);
-    record = window.getItem('record');
-    console.log(record);
-
+    savePoints()
+    windowResized()
 }
 
+function touchCanvas(){
+    let canvas = createCanvas(innerWidth, innerHeight);
+    stroke(255); // Set line drawing color to white
+    canvas.touchStarted(() => {ball.jump()})
+    canvas.mouseClicked(() => {ball.jump()})
+}
 
 function createJumpingBall() {
     ball = new JumpingBall(width/6, BASE_LINE - RADIUS, RADIUS, 1, 10, "blue", 0);
@@ -30,16 +28,20 @@ function createEnemy(){
 }
 
 function createHtml(){
-    divGame = createDiv().size(width, innerHeight).addClass('game');
-    divValue = createDiv().size(width, 100).addClass('container-value');
-    divPoints = createDiv().size(width/2, 100).addClass('points');
-    divRecord = createDiv('record: ').size(width/2, 100).addClass('record');
-    divGame.child(divPoints);
-    divGame.child(canvas);
+    divGame = createDiv().addClass('game');
+    divCanvas = createDiv().addClass('divCanvas');
+    divValue = createDiv().addClass('container-value');
+    divPoints = createDiv().addClass('points');
+    divRecord = createDiv('record: ').addClass('record');
+    divPause = createDiv('Pause').addClass('pause');
     divGame.child(divValue);
-    divValue.child(divPoints);
+    divGame.child(divPoints);
     divGame.child(divRecord);
+    divValue.child(divPoints);
     divValue.child(divRecord);
+    divGame.child(divCanvas);
+    divCanvas.child(canvas);
+    divGame.child(divPause);
 }
 
 function setup() {
@@ -53,6 +55,12 @@ function randomColor(){
     r = random(0, 255);
     g = random(0, 255);
     b = random(0, 255);
+}
+
+function savePoints(){
+    const condition = performance.navigation.type === 1;
+    condition ? points = 0 : points = window.getItem('pointsPause');
+    record = window.getItem('record');
 }
 
 function changeColor(){
@@ -82,9 +90,10 @@ function changeColor(){
     }
 
 }
-
+function windowResized() {
+    window.resizeCanvas(window.windowWidth, window.windowHeight/1.5);
+}
 function drawGame(){
-
     changeColor()
     ball.draw();
     enemy.draw();
@@ -110,6 +119,8 @@ function checkLose(){
         console.log("you lose");
         window.noLoop()
         window.storeItem('record',points);
+        points = 0;
+        window.storeItem('pointsPause',points);
     }
 }
 function checkRecord(){
@@ -135,6 +146,12 @@ function pointGame(){
     points += 1;
     divPoints.innerHTML = divPoints.html('score: ' + points, false);
 }
+function pause(){
+    divPause.touchStarted(() => {window.location = 'startMenu.html';})
+    divPause.mouseClicked(() => {window.location = 'startMenu.html';})
+    window.storeItem('pointsPause',points);
+}
+
 function draw() {
     drawGame()
     addEnemies()
@@ -142,5 +159,6 @@ function draw() {
     moveEnemy()
     pointGame();
     checkRecord()
+    pause();
     checkLose()
 }

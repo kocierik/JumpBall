@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>JumpBall 🎱 🥎 ⚽</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="./src/game/menu.js"></script>
     <link rel="stylesheet" href="./src/style/startMenu.css">
     <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet"/>
 </head>
@@ -14,7 +15,7 @@
         <h1>JumpBall</h1>
     </div>
     <div class="container__button">
-    <button onclick="window.location='index.html';">
+    <button id="pauseButton" onclick="pauseMenu()">
         <img src="src/assets/icon/play.svg" style="width:300px;height:200px;"/>
     </button>
     </div>
