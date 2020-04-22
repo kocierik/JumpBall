@@ -7,6 +7,7 @@ function  informationMenu() {
 }
 function  startMenu() {
     window.location = 'startMenu.html';
+
 }
 function creditMenu() {
     window.location = 'credit.html';
