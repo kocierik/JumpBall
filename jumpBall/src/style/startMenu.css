@@ -4,6 +4,7 @@ html{
 }
 body{
     height: 100%;
+    width: 100%;
     margin: 0px;
     padding: 0px;
     background: black;
@@ -34,21 +35,29 @@ body{
     height: 100%;
     width: 100%;
     flex-direction: column;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
 }
 .header{
     display: flex;
     flex: 0 0 auto;
     justify-content: center;
     width: 100%;
-    height: 300px;
-    align-items: flex-end;
-    font-size: 30px;
+    height: 200px;
+    font-size: 35px;
+}
+h1{
+    display: flex;
+    flex: 0 0;
+    align-items: end;
 }
 .container__button{
     display: flex;
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 button{
     background: transparent;
@@ -56,4 +65,37 @@ button{
     border: 0px;
     outline: transparent;
     cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+    user-select: none;
+}
+
+.footer{
+    display: flex;
+    flex: 0 0 auto;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-top: 1px solid;
+    border-radius: 8px;
+}
+.footer__tutorial{
+    display: flex;
+    flex: 0 0 auto;
+    width: 50%;
+    justify-content: center;
+}
+.footer__credit{
+    display: flex;
+    flex: 0 0 auto;
+    width: 50%;
+    justify-content: center;
+}
+@media screen and (max-width: 480px) {
+    .footer{
+        font-size: 25px;
+    }
+
 }

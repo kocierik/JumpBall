@@ -35,6 +35,9 @@ body{
     height: 100%;
     width: 100%;
     flex-direction: column;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
 }
 .container-value{
     display: flex;
@@ -57,10 +60,9 @@ body{
     align-items: center;
     font-size: 60px;
     cursor: pointer;
+
 }
-canvas {
-    border-radius: 12px;
-}
+
 
 .points{
     display: flex;
