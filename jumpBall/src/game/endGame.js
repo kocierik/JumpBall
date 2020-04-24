@@ -8,9 +8,7 @@ function checkLose(){
     if(checkCollisionX && checkCollisionY){
         window.noLoop();
         checkRecord();
-        debugger
         points = 0;
-        debugger
         divPause.html('retry');
         game = false;
         divStartMenu.show();
@@ -19,7 +17,6 @@ function checkLose(){
         })
         createJumpingBall()
         createEnemy()
-
     }
 }
 
@@ -27,29 +24,45 @@ function storeData(){
     window.storeItem('pointsPause',points);
 }
 
+
+let time = 3;
+function countDown(){
+    if(time >= 0){
+        console.log(time)
+        time -= 1;
+
+    }
+    if(time === 0){
+        divStartMenu.hide();
+        divPause.html('Pause');
+        window.loop();
+
+    }
+}
+
+function timer(){
+    if(time > 0){
+        setInterval(countDown, 1000)
+    }
+}
 function pause(){
     divPause.mouseClicked(() => {
-        if(game === true){
+        if(divPause.html() === "Pause"){
             divPause.html('resume');
             window.noLoop();
             game = false;
             divStartMenu.show();
-
         }
-        else{
-            divStartMenu.hide();
-            divPause.html('pause');
-            window.loop();
+        else if(game === false ){
+            timer()
+
             game = true;
+            time = 3
         }
-
     })
+
     divStartMenu.mouseClicked(() => {
         points = 0;
         window.location = 'startMenu.html';
-        createJumpingBall()
-        createEnemy()
-        debugger
     })
-
 }

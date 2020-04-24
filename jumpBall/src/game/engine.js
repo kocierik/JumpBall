@@ -20,6 +20,7 @@ function touchCanvas(){
     let canvas = createCanvas(innerWidth, outerHeight/2);
     stroke(255); // Set line drawing color to white
     canvas.mouseClicked(() => {ball.jump()})
+    canvas.touchStarted(() => {ball.jump()})
 }
 
 function checkBallJump() {

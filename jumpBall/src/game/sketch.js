@@ -6,6 +6,8 @@ function setup() {
     createEnemy()
 }
 
+
+
 function draw() {
     drawGame()
     addEnemies()
