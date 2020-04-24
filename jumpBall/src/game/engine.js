@@ -1,6 +1,6 @@
 const MAX_JUMPY = 100;
-const BASE_LINE = 312;
-const RADIUS = 20;
+const BASE_LINE = 300;
+const RADIUS = 15;
 let ball, enemy;
 
 function createJumpingBall() {
@@ -39,8 +39,8 @@ function addEnemies(){
     if(enemy.x <= 0 ){
         enemy.x = width;
         if(enemy.speed < 14){
-            enemy.speed += 0.3;
-            ball.jumpY += 0.2;
+            enemy.speed += 0.2;
+            ball.jumpY += 0.4;
         }
     }
 }
