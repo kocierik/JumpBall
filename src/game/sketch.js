@@ -1,8 +1,18 @@
+import {
+    createJumpingBall,
+    createEnemy,
+    createBoardGame,
+    addEnemies,
+    checkBallJump,
+    moveEnemy
+} from './engine'
+import { drawGame } from './graphics'
+
 
 function setup() {
     loadBackground()
     createBoardGame()
-    createHtml();
+    savePoints()
     createJumpingBall()
     createEnemy()
 }

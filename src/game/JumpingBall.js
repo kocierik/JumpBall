@@ -1,4 +1,7 @@
-class JumpingBall extends Ball{
+import { MAX_JUMPY } from "./const";
+import Ball from "./Ball";
+
+export default class extends Ball{
     constructor(x, y, radius, gravity, jumpY, color, speed) {
         super(x,y,radius,gravity, color, speed);
         this.jumpY = jumpY;
