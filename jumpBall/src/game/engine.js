@@ -38,7 +38,7 @@ function moveEnemy() {
 function addEnemies(){
     if(enemy.x <= 0 ){
         enemy.x = width;
-        if(enemy.speed < 14){
+        if(enemy.speed < 13){
             enemy.speed += 0.2;
             ball.jumpY += 0.4;
         }

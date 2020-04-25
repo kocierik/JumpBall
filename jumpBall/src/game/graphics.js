@@ -34,29 +34,31 @@ function randomColor(){
     g = random(0, 255);
     b = random(0, 255);
 }
-
+let bg1, bg2, bg3;
 function changeColor(){
-    background(0,0,0);
-    if( points > 2500){
-        background(r,g,b);
-        enemy.speed += 0.005
-        ball.jumpY += 0.005;
 
-    }
-    else if (points > 2000){
+    background(0,0,0)
+
+    if( points > 4000){
         if(random(0,100) > 50){
             background(0,0,0)
         }   else {
             background(255,255,255)
         }
-    }else if(points > 500 && points < 1500){
+        enemy.speed += 0.003;
+        ball.jumpY += 0.003;
+    }
+    else if (points > 3200){
+        background(bg3);
+    }else if(points > 1300 && points < 2500){
+
         randomColor()
-        background(r,g,b);
+        background(bg2);
         enemy.randomSpeed(5,14);
         ball.jumpY = 10;
-    } else if(points > 300 && random(15,100) > 50){
+    } else if(points > 500){
         randomColor()
-        background(r,g,b);
+        background(bg1);
         enemy.randomSpeed(5,10);
         ball.jumpY = 10;
     }
