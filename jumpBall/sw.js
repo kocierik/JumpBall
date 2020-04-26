@@ -17,8 +17,7 @@ var filesToCache = [
   "/src/game/engine.js",
   "/src/game/JumpingBall.js",
   "/src/game/sketch.js",
-  "/src/game/pwa.js",
-  "/src/game/index.js",
+  "/src/index.js",
   
   // css
   "/src/style/index.css",
