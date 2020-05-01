@@ -11,4 +11,4 @@ if ("serviceWorker" in navigator) {
 }
 
 points = 0;
-localStorage.setItem(points)
+localStorage.setItem("pointsPause", points);
