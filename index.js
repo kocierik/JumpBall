@@ -1,6 +1,5 @@
-
 // init p5 setup and draw
-initializeSketch()
+initializeSketch();
 
 // init PWA App
 
@@ -11,4 +10,5 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-
+points = 0;
+localStorage.setItem(points)
