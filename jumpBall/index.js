@@ -1,6 +1,6 @@
 
 // init p5 setup and draw
-initializeSkeatch()
+initializeSketch()
 
 // init PWA App
 

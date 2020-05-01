@@ -6,7 +6,7 @@ function checkLose(){
     const checkCollisionY = ball.x - ball.radius < enemy.x + enemy.radius && ball.y  >=
         enemy.y - enemy.radius
     if(checkCollisionX && checkCollisionY){
-        window.noLoop();
+        window.sketch.noLoop();
         checkRecord();
         points = 0;
         divPause.html('retry');
@@ -21,7 +21,7 @@ function checkLose(){
 }
 
 function storeData(){
-    window.storeItem('pointsPause',points);
+    window.localStorage.setItem('pointsPause',points);
 }
 
 

@@ -9,7 +9,7 @@ function pointGame(){
 function checkRecord(){
     if(points > record ){
         divRecord.innerHTML = divRecord.html('record: ' + points, false);
-        window.storeItem('record',points);
+        window.localStorage.setItem('record',points);
     }
     else{
         divRecord.innerHTML = divRecord.html('record: ' + record, false);
@@ -18,6 +18,6 @@ function checkRecord(){
 
 function savePoints(){
     const condition = performance.navigation.type === 1;
-    condition ? points = 0 : points = window.getItem('pointsPause');
-    record = window.getItem('record');
+    condition ? points = 0 : points = window.localStorage.getItem('pointsPause');
+    record = window.localStorage.getItem('record');
 }

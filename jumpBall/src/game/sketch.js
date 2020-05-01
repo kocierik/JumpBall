@@ -1,11 +1,11 @@
 
-function initializeSkeatch() {
+function initializeSketch() {
  
     function sketchConfiguration(sk, gameContainer){
         sk.setup = function setup() {
-            bg1 = window.loadImage('/src/assets/icon/illusione-quadrato.png');
-            bg2 = window.loadImage('/src/assets/icon/illusione-quadrato2.png');
-            bg3 = window.loadImage('/src/assets/icon/illusione-linee.png');
+            bg1 = sk.loadImage('/src/assets/icon/illusione-quadrato.png');
+            bg2 = sk.loadImage('/src/assets/icon/illusione-quadrato2.png');
+            bg3 = sk.loadImage('/src/assets/icon/illusione-linee.png');
             createBoardGame()
             createHtml();
             createJumpingBall()
@@ -23,5 +23,6 @@ function initializeSkeatch() {
         }
     }
         
-    const sketch = new window.p5(sketchConfiguration, 'game') // <div id="game"></div>
+    const sketch = new window.p5(sketchConfiguration) // <div id="game"></div>
+    window.sketch = sketch
 }
