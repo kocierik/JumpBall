@@ -35,7 +35,7 @@ function countDown(){
     if(time === 0){
         divStartMenu.hide();
         divPause.html('Pause');
-        window.loop();
+        window.sketch.loop();
 
     }
 }
@@ -49,7 +49,7 @@ function pause(){
     divPause.mouseClicked(() => {
         if(divPause.html() === "Pause"){
             divPause.html('resume');
-            window.noLoop();
+            window.sketch.noLoop();
             game = false;
             divStartMenu.show();
         }
