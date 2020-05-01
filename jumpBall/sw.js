@@ -21,6 +21,13 @@ var filesToCache = [
   
   // css
   "/src/style/index.css",
+
+  //image
+  "src/assets/icon/illusione-cerchio.jpg",
+  "src/assets/icon/illusione-linee.jpg",
+  "src/assets/icon/illusione-quadrato.jpg",
+  "src/assets/icon/illusione-quadrato2.jpg",
+  "src/assets/icon/play.svg",
 ];
 
 // Listen to installation event
