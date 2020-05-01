@@ -1,6 +1,11 @@
 const MAX_JUMPY = 100;
 const BASE_LINE = 300;
 const RADIUS = 15;
+const BOARD_SIZE = {
+    width: 400,
+    height: 600,
+}
+
 let ball, enemy, canvas;
 
 function createJumpingBall() {
@@ -17,7 +22,10 @@ function createBoardGame(){
 }
 
 function touchCanvas() {
-    canvas = window.sketch.createCanvas(innerWidth, outerHeight/2);
+    const canvas = window.sketch.createCanvas(BOARD_SIZE.width, BOARD_SIZE.height)
+    canvas.elt.style.width = '100%'
+    canvas.elt.style.height = '100%'
+
     window.sketch.stroke(255); // Set line drawing color to white
     canvas.mouseClicked(() => {ball.jump()})
     canvas.touchStarted(() => {ball.jump()})
