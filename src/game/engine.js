@@ -24,7 +24,7 @@ function touchCanvas() {
 }
 
 function checkBallJump() {
-    if(window.sketch.keyCode === window.UP_ARROW ){
+    if(window.sketch.keyCode === window.sketch.UP_ARROW ){
         ball.jump()
         window.sketch.keyCode = null;
     }
