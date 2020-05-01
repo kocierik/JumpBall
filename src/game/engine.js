@@ -37,7 +37,7 @@ function moveEnemy() {
 
 function addEnemies(){
     if(enemy.x <= 0 ){
-        enemy.x = width;
+        enemy.x = window.sketch.width;
         if(enemy.speed < 13){
             enemy.speed += 0.2;
             ball.jumpY += 0.4;
