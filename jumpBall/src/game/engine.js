@@ -17,8 +17,8 @@ function createBoardGame(){
 }
 
 function touchCanvas(){
-    let canvas = createCanvas(innerWidth, outerHeight/2);
-    stroke(255); // Set line drawing color to white
+    let canvas = window.p5.createCanvas(innerWidth, outerHeight/2);
+    window.p5.stroke(255); // Set line drawing color to white
     canvas.mouseClicked(() => {ball.jump()})
     canvas.touchStarted(() => {ball.jump()})
 }
