@@ -1,7 +1,5 @@
 var shellCacheName = "pwa-jump-ball-v1"; // questo id deve cambiare ogni volta che rilasci una nuova versione dell'app
 var filesToCache = [
-  "/",
-
   // html
   "/index.html",
   "/credit.html",
@@ -17,7 +15,7 @@ var filesToCache = [
   "/src/game/engine.js",
   "/src/game/JumpingBall.js",
   "/src/game/sketch.js",
-  "/src/index.js",
+  "/index.js",
 
   // css
   "/src/style/index.css",
@@ -29,10 +27,6 @@ var filesToCache = [
   "/src/assets/icon/illusione-quadrato2.png",
   "/src/assets/icon/play.svg",
 ];
-
-for (let i = 0; i < filesToCache.length; i++) {
-  filesToCache[i] = "/Jumpball" + filesToCache[i];
-}
 
 // Listen to installation event
 self.addEventListener("install", function (e) {
