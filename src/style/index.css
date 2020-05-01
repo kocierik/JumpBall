@@ -1,0 +1,113 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: black;
+    font-family: "Coming Soon";
+    color: white;
+    animation: loopColor 5s infinite;
+}
+
+@keyframes loopColor {
+    0% {
+        background-color: black;
+    }
+
+    25% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+.game{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+}
+.container-value{
+    display: flex;
+    flex: 1 0 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.divCanvas{
+    display: flex;
+    flex: 0 1 30%;
+}
+.pause{
+    display: flex;
+    text-align: center;
+    flex: 1 0 20%;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    cursor: pointer;
+
+}
+canvas{
+    height: 100%;
+    width: 100%;
+}
+
+.points{
+    display: flex;
+    flex: 0 0 auto;
+    height: 100%;
+    width: 50%;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.record{
+    display: flex;
+    flex: 0 0 auto;
+    height: 100%;
+    width: 50%;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 480px) {
+    .points{
+        font-size: 30px;
+    }
+    .record{
+        font-size: 30px;
+    }
+    .pause{
+        font-size: 40px;
+    }
+}
+.button__resume{
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    color: white;
+    font-family: "Coming Soon";
+    border-radius: 8px;
+    border-color: blue;
+}
+.container-button{
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
