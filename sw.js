@@ -24,9 +24,9 @@ var filesToCache = [
 
   //image
   "/src/assets/icon/illusione-cerchio.jpg",
-  "/src/assets/icon/illusione-linee.jpg",
-  "/src/assets/icon/illusione-quadrato.jpg",
-  "/src/assets/icon/illusione-quadrato2.jpg",
+  "/src/assets/icon/illusione-linee.png",
+  "/src/assets/icon/illusione-quadrato.png",
+  "/src/assets/icon/illusione-quadrato2.png",
   "/src/assets/icon/play.svg",
 ];
 
