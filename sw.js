@@ -1,31 +1,31 @@
 var shellCacheName = "pwa-jump-ball-v1"; // questo id deve cambiare ogni volta che rilasci una nuova versione dell'app
 var filesToCache = [
   // html
-  "/index.html",
-  "/credit.html",
-  "/information.html",
-  "/startMenu.html",
+  "./index.html",
+  "./credit.html",
+  "./information.html",
+  "./startMenu.html",
 
   // javascript
-  "/src/game/p5.min.js",
-  "/src/game/ball.js",
-  "/src/game/graphics.js",
-  "/src/game/points.js",
-  "/src/game/endGame.js",
-  "/src/game/engine.js",
-  "/src/game/JumpingBall.js",
-  "/src/game/sketch.js",
-  "/index.js",
+  "./src/game/p5.min.js",
+  "./src/game/ball.js",
+  "./src/game/graphics.js",
+  "./src/game/points.js",
+  "./src/game/endGame.js",
+  "./src/game/engine.js",
+  "./src/game/JumpingBall.js",
+  "./src/game/sketch.js",
+  "./index.js",
 
   // css
-  "/src/style/index.css",
+  "./src/style/index.css",
 
   //image
-  "/src/assets/icon/illusione-cerchio.jpg",
-  "/src/assets/icon/illusione-linee.png",
-  "/src/assets/icon/illusione-quadrato.png",
-  "/src/assets/icon/illusione-quadrato2.png",
-  "/src/assets/icon/play.svg",
+  "./src/assets/icon/illusione-cerchio.jpg",
+  "./src/assets/icon/illusione-linee.png",
+  "./src/assets/icon/illusione-quadrato.png",
+  "./src/assets/icon/illusione-quadrato2.png",
+  "./src/assets/icon/play.svg",
 ];
 
 // Listen to installation event
