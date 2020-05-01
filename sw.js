@@ -30,6 +30,10 @@ var filesToCache = [
   "/src/assets/icon/play.svg",
 ];
 
+for (let i = 0; i < filesToCache.length; i++) {
+  filesToCache[i] = "/Jumpball" + filesToCache[i];
+}
+
 // Listen to installation event
 self.addEventListener("install", function (e) {
   console.log("[ServiceWorker] Install");
