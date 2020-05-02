@@ -26,7 +26,7 @@ function drawGame(){
     changeColor()
     ball.draw();
     enemy.draw();
-    window.sketch.line(window.windowWidth,BASE_LINE,0,BASE_LINE);
+    window.sketch.line(window.sketch.windowWidth,BASE_LINE,0,BASE_LINE);
 }
 
 function randomColor(){
