@@ -1,4 +1,4 @@
-var shellCacheName = "pwa-jump-ball-v"; // questo id deve cambiare ogni volta che rilasci una nuova versione dell'app
+var shellCacheName = "pwa-jump-ball-v1"; // questo id deve cambiare ogni volta che rilasci una nuova versione dell'app
 var filesToCache = [
   // html
   "./index.html",

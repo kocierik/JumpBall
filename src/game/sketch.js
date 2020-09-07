@@ -1,7 +1,6 @@
-
 function initializeSketch() {
- 
-    function sketchConfiguration(sk, gameContainer){
+
+    function sketchConfiguration(sk, gameContainer) {
         sk.setup = function setup() {
             bg1 = sk.loadImage('/src/assets/icon/illusione-quadrato.png');
             bg2 = sk.loadImage('/src/assets/icon/illusione-quadrato2.png');
@@ -18,11 +17,13 @@ function initializeSketch() {
             moveEnemy()
             pointGame();
             checkRecord()
+
             pause();
             checkLose()
+
         }
     }
-        
+
     const sketch = new window.p5(sketchConfiguration) // <div id="game"></div>
     window.sketch = sketch
 }

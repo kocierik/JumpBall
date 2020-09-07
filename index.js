@@ -5,10 +5,10 @@ initializeSketch();
 
 // Check if browser supports service workers
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").then(() => {
-    console.log("[ServiceWorker**] - Registered");
-  });
+    navigator.serviceWorker.register("sw.js").then(() => {
+        console.log("[ServiceWorker**] - Registered");
+    });
 }
 
 points = 0;
-localStorage.setItem("pointsPause", points);
+points = localStorage.setItem("record", points)

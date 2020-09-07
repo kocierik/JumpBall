@@ -1,13 +1,15 @@
 let game = true;
 
-function checkLose(){
+function checkLose() {
     const checkCollisionX = ball.x + ball.radius - enemy.speed >= enemy.x - enemy.radius ||
         ball.x - ball.radius >= enemy.x + enemy.radius
-    const checkCollisionY = ball.x - ball.radius < enemy.x + enemy.radius && ball.y  >=
+    const checkCollisionY = ball.x - ball.radius < enemy.x + enemy.radius && ball.y >=
         enemy.y - enemy.radius
-    if(checkCollisionX && checkCollisionY){
+    if (checkCollisionX && checkCollisionY) {
         window.sketch.noLoop();
+        savePoints() //<---
         checkRecord();
+
         points = 0;
         divPause.html('retry');
         game = false;
@@ -20,19 +22,20 @@ function checkLose(){
     }
 }
 
-function storeData(){
-    window.localStorage.setItem('pointsPause',points);
+function storeData() {
+    window.localStorage.setItem('pointsPause', points);
 }
 
 
 let time = 3;
-function countDown(){
-    if(time >= 0){
+
+function countDown() {
+    if (time >= 0) {
         console.log(time)
         time -= 1;
 
     }
-    if(time === 0){
+    if (time === 0) {
         divStartMenu.hide();
         divPause.html('Pause');
         window.sketch.loop();
@@ -40,20 +43,20 @@ function countDown(){
     }
 }
 
-function timer(){
-    if(time > 0){
+function timer() {
+    if (time > 0) {
         setInterval(countDown, 1000)
     }
 }
-function pause(){
+
+function pause() {
     divPause.mouseClicked(() => {
-        if(divPause.html() === "Pause"){
+        if (divPause.html() === "Pause") {
             divPause.html('resume');
             window.sketch.noLoop();
             game = false;
             divStartMenu.show();
-        }
-        else if(game === false ){
+        } else if (game === false) {
             timer()
 
             game = true;
