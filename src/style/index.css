@@ -10,7 +10,7 @@ body{
     background: black;
     font-family: "Coming Soon";
     color: white;
-    animation: loopColor 5s infinite;
+    animation: loopColor 7s infinite;
 }
 
 @keyframes loopColor {

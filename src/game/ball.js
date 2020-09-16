@@ -9,11 +9,11 @@ class Ball {
     }
 
     draw(){
-        window.sketch.ellipse(this.x, this.y, this.radius*2, this.radius*2);
-        window.sketch.fill(this.color);
+        ellipse(this.x, this.y, this.radius*2, this.radius*2);
+        fill(this.color);
         }
     randomSpeed(min,max){
-        this.speed = window.sketch.random(min,max)
+        this.speed = random(min,max)
     }
     moveUp(pixel){
         this.y -= pixel
@@ -26,3 +26,4 @@ class Ball {
             this.x -= speed;
     }
 }
+

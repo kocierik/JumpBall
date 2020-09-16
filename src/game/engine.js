@@ -1,14 +1,14 @@
 const MAX_JUMPY = 100;
 const BASE_LINE = 300;
 const RADIUS = 15;
-let ball, enemy, canvas;
+let ball, enemy;
 
 function createJumpingBall() {
-    ball = new JumpingBall(window.sketch.width/6, BASE_LINE - RADIUS, RADIUS, 1, 10, "blue", 0);
+    ball = new JumpingBall(width/6, BASE_LINE - RADIUS, RADIUS, 1, 10, "blue", 0);
 }
 
 function createEnemy(){
-    enemy = new Ball(window.sketch.width, BASE_LINE - RADIUS, RADIUS,1,"red",5);
+    enemy = new Ball(width, BASE_LINE - RADIUS, RADIUS,1,"red",5);
 }
 
 function createBoardGame(){
@@ -16,17 +16,17 @@ function createBoardGame(){
     savePoints()
 }
 
-function touchCanvas() {
-    canvas = window.sketch.createCanvas(innerWidth, outerHeight/2);
-    window.sketch.stroke(255); // Set line drawing color to white
+function touchCanvas(){
+    let canvas = createCanvas(innerWidth, outerHeight/2);
+    stroke(255); // Set line drawing color to white
     canvas.mouseClicked(() => {ball.jump()})
     canvas.touchStarted(() => {ball.jump()})
 }
 
 function checkBallJump() {
-    if(window.sketch.keyCode === window.sketch.UP_ARROW ){
+    if(keyCode === window.UP_ARROW ){
         ball.jump()
-        window.sketch.keyCode = null;
+        window.keyCode = null;
     }
 }
 
@@ -37,8 +37,8 @@ function moveEnemy() {
 
 function addEnemies(){
     if(enemy.x <= 0 ){
-        enemy.x = window.sketch.width;
-        if(enemy.speed < 13){
+        enemy.x = width;
+        if(enemy.speed < 14){
             enemy.speed += 0.2;
             ball.jumpY += 0.4;
         }
